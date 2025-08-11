@@ -78,6 +78,17 @@
         users.push({ name, email, password: hashedPassword });
         localStorage.setItem("users", JSON.stringify(users));
         showPopup(`Welcome ${name}! Registration successful.`);
+
+        function changeUi() {
+          window.location.href = "index.html";
+        }
+
+        // login page show after reg
+        setTimeout(() => {
+          closePopup();
+          changeUi();
+        }, 1500);
+
       }
 
       function openHome() {
